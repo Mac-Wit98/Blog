@@ -1,12 +1,19 @@
 package pl.akademiakodu.springExample;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Post {
     private String title;
-    private String contain;
-    private String user;
+    private String description;
+    private String author;
+
+    public Post(){}
+
+    public Post(String title, String description, String author) {
+
+        this.title = title;
+        this.description = description;
+        this.author = author;
+    }
 
     public String getTitle() {
         return title;
@@ -16,48 +23,27 @@ public class Post {
         this.title = title;
     }
 
-    public String getContain() {
-        return contain;
+    public String getDescription() {
+        return description;
     }
 
-    public void setContain(String contain) {
-        this.contain = contain;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getUser() {
-        return user;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public Post(String title, String contain, String user) {
-        this.title = title;
-        this.contain = contain;
-        this.user = user;
-    }
-
-    public Post(String title, String contain) {
-        this.contain = contain;
-        this.title = title;
-
-    }
-
-    public Post(String title) {
-        this.title = title;
-    }
-    public Post(){}
-
-    @Override
+    @Override //Dobra praktyka
     public String toString() {
-        return getTitle()+" "+getContain();
+        return getAuthor()+" "+getTitle()+" "+getDescription();
     }
-
     public static void main(String[] args) {
-        List<Post> postList =new ArrayList<>();
-        Post post = new Post("Programowanie w Javie to przygoda", "Programowanie jest super");
-        Post secondPost = new Post("Programowanie w Ruby","W Ruby występują wszystkie zmienne");
 
     }
 }
